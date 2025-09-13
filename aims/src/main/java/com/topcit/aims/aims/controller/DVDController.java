@@ -1,4 +1,4 @@
 package com.topcit.aims.aims.controller;
 
-public class OrdersController {
+public class DVDController {
 }
