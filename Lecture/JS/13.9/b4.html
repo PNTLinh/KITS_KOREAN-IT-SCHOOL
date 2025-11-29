@@ -1,0 +1,24 @@
+<!--lấy dữ liệu từ mảng và đưa vào trong thẻ <p>, sau đó đưa vào trong thẻ div có id là wrapper-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+    <body>
+    <div id="wrapper"></div>
+    <script>
+        const mang = ["This is paragraph 1",
+                        "This is paragraph 2",
+                        "This is paragraph 3",
+                        "This is paragraph 4",
+                        "This is paragraph 5"
+                        ];
+        const wrapper = document.getElementById("wrapper");
+        for (let i =0; i< mang.length; i++){
+            const p = document.createElement("p");
+            p.textContent = mang[i];
+            wrapper.appendChild(p);
+        }
+    </script>
+    </body>
+</html>

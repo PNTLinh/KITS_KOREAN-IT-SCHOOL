@@ -1,0 +1,22 @@
+<!--Khi nhấn vào nút add hãy thêm phần tử vào sau li cuối cùng theo thứ tự tăng dần -->
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <ul id="list">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+        </ul>
+        <button id="btn" onclick="change">Add</button>
+    </body>
+    <script>
+        document.getElementById("btn").onclick = function change() {
+            let ds = document.getElementById("list");
+            let it= document.getElementsByTagName("li");
+            let newIt = document.createElement("li");
+            newIt.innerText =  parseInt(it[it.length - 1].innerText)+1;
+            ds.appendChild(newIt);
+        };
+    </script>
+</html>

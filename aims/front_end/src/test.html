@@ -1,0 +1,67 @@
+<html>
+    <head>
+        <title>Test Page</title>
+        <script src="./test page"></script>
+        //css link
+        <link rel="stylesheet" href="C:\Users\ntlinh\Documents\20251\KITS_KOREAN-IT-SCHOOL\aims\frontend\src\test.css">
+    </head>
+    <body>
+        welcome to vietnam
+        <a href="https://www.google.com", target="blank"> this is google</a>
+        <img src="w3schools.jpg" alt="W3Schools.com" width="104" height="142">
+        <div style="background-color: lightblue; padding: 10px;">
+        Đây là một div
+        </div>
+        <div style="background-color: lightgreen; padding: 10px;">
+        Đây là div khác
+        </div>
+        <p>Tôi thích <span style="color: red;">màu đỏ</span> và <span style="color: blue;">màu xanh</span>.</p>
+        <table border="1">
+            <tr>
+                <th>Họ</th>
+                <th>Tên</th>
+                <th>Tuổi</th>
+            </tr>
+            <tr>
+                <td>Nguyễn</td>
+                <td>An</td>
+                <td>25</td>
+            </tr>
+            <tr>
+                <td>Trần</td>
+                <td>Bình</td>
+                <td>30</td>
+            </tr>
+        <!-- anctype="multipart/form-data" + method = post: upload file
+        //textplain khong ma hoa
+        //x-www-form-urlencoded ma hoa-->
+        <form action="/submit" method="post" action ="test.html" anctype="multipart/form-data">
+            <label for="name">Họ tên:</label>
+            <input type="text" id="name" name="name"><br><br>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email"><br><br>
+
+            <label for="gender">Giới tính:</label>
+            <input type="radio" id="male" name="gender" value="Nam"> Nam
+            <input type="radio" id="female" name="gender" value="Nữ"> Nữ<br><br>
+
+            <label for="hobby">Sở thích:</label>
+            <input type="checkbox" name="hobby" value="Đọc sách"> Đọc sách
+            <input type="checkbox" name="+hobby" value="Nghe nhạc"> Nghe nhạc<br><br>
+
+            <label for="country">Quốc gia:</label>
+            <select id="country" name="country">
+                <option value="vn">Việt Nam</option>
+                <option value="us">Mỹ</option>
+                <option value="jp">Nhật Bản</option>
+            </select><br><br>
+
+            <label for="message">Tin nhắn:</label><br>
+            <textarea id="message" name="message" rows="4" cols="30"></textarea><br><br>
+
+            <button type="submit">Gửi</button>
+        </form>
+
+    </body>
+</html>

@@ -1,0 +1,25 @@
+<!--Khi nhấn vào nút change, hãy đảo chiều vị trí li từ 1,2,3,4,5 thành 5,4,3,2,1-->
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <ul id="list">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+        </ul>
+        <button id="btn" onclick="change">Reverse</button>
+    </body>
+    <script>
+        document.getElementById("btn").onclick = function change() {
+            let ds = document.getElementById("list");
+            let it= document.getElementsByTagName("li");
+            for (let i = it.length - 1; i >= 0; i--) {
+                let newIt = document.createElement("li");
+                newIt.innerText = it[i].innerText;
+                ds.appendChild(newIt);
+                ds.removeChild(it[i]);
+            }
+        };
+    </script>
+</html>

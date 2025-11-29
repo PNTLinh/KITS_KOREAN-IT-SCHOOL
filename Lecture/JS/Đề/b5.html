@@ -1,0 +1,39 @@
+<!--Khi nhấn vào nút copy, hãy lấy các thẻ li có giá trị text bằng nhau trong cả hai thẻ ul và chèn vào thẻ ul cuối cùng-->
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <ul id="list1">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+        </ul>
+        <ul id="list2">
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+        </ul>
+        <ul id="list3">
+        </ul>
+        <button id="btn" onclick="change">Copy</button>
+    </body>
+    <script>
+        document.getElementById("btn").onclick = function change() {
+            let ds1 = document.getElementById("list1").getElementsByTagName("li");
+            let ds2 = document.getElementById("list2").getElementsByTagName("li");
+            let ds3 = document.getElementById("list3");
+            ds3.innerHTML = "";// delete before copy
+            let vl2 = [];
+            for (let i = 0; i < ds2.length; i++) {
+                vl2.push(ds2[i].innerText);
+            }
+            for (let i = 0; i < ds1.length; i++) {
+                if (vl2.includes(ds1[i].innerText)) {
+                    let newIt = document.createElement("li");
+                    newIt.innerText = ds1[i].innerText;
+                    ds3.appendChild(newIt);
+                }
+            }
+        };
+    </script>
+</html>

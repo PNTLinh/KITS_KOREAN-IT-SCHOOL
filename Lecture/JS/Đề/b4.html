@@ -1,0 +1,29 @@
+<!--Khi nhấn vào nút copy, hãy lấy các phần tử của ul ở trên và đưa vào ul ở phía dưới -->
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <ul id="list">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+        </ul>
+        <ul id="list2">
+            <p>List 2: </p>
+        </ul>
+        <button id="btn" onclick="change">Copy</button>
+    </body>
+    <script>
+        document.getElementById("btn").onclick = function change() {
+            let ds = document.getElementById("list");
+            let ds2 = document.getElementById("list2");
+            ds2.innerHTML = " ";// delete before copy
+            let it= document.getElementsByTagName("li");
+            for (let i = 0; i < it.length; i++) {
+                let newIt = document.createElement("li");
+                newIt.innerText = it[i].innerText;
+                ds2.appendChild(newIt);
+            }
+        };
+    </script>
+</html>

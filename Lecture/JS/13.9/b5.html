@@ -1,0 +1,28 @@
+<!--Lấy child trong thẻ <div> có id=”wrapper” và đưa vào thẻ <div> có id=”copy-wrapper” khi nhấn nút có id “btn”-->
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<div id="wrapper">
+		<p>This is paragraph 1</p>
+		<p>This is paragraph 2</p>
+		<p>This is paragraph 3</p>
+		<p>This is paragraph 4</p>
+	</div>
+
+	<div id="copy-wrapper"></div>
+
+	<button id="btn">Copy</button>
+
+    <script>
+        const bt = document.getElementById("btn");
+        bt.onclick = function() {
+            const wrapper = document.getElementById("wrapper");
+            const copyWrapper = document.getElementById("copy-wrapper");
+            copyWrapper.innerHTML = wrapper.innerHTML;<!--copy all child from wrapper to copy-wrapper-->
+        }
+    </script>
+</body>
+</html>

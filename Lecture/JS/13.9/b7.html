@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+    </head>
+    <body>
+        <form id="form">
+            <label for="name">Username</label><br>
+            <input type="text" id="name" name="name" required><br>
+            <label for="pass">Password</label><br>
+            <input type="text" id="pass" name="pass" required><br>
+            <label for="email">Email</label><br>
+            <input type="text" id="email" name="email" required><br>
+            <label for="fname">Fullname</label><br>
+            <input type="text" id="fname" name="fname" required><br>
+            <button type="submit">Submit</button>
+        </form>
+        <script>
+            const form = document.getElementById("form");
+            const reg = /\S+@\S+/; 
+            form.onsubmit = function(event){
+                const name = document.getElementById("name").value;
+                const pass = document.getElementById("pass").value;
+                const email = document.getElementById("email").value;
+                const fname = document.getElementById("fname").value;
+                let kq= true;
+                let msg = "";
+                if (name.length <=5 || name.length >10){
+                    kq = false;
+                    msg += "Username must be 6-9 characters long.\n";
+                }
+                if (pass.length <6 || pass.length >10){
+                    kq = false;
+                    msg += "Password must be 6-10 characters long.\n";
+                }
+                if (!reg.test(email)){
+                    kq = false;
+                    msg += "Email is not valid.\n";
+                }
+                if (f.name.length <6 || f.name.length >20){
+                    kq = false;
+                    msg += "Fullname must be 6-20 characters long.\n";
+                }
+                if (kq){
+                    alert("Form submitted");
+                } else {
+                    event.preventDefault(); //chặn sự kiện submit form
+                    alert(msg);
+                }
+            }
+        </script>
+    </body>
+</html>

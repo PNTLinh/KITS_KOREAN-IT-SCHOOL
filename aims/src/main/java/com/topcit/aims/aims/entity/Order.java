@@ -6,13 +6,12 @@ import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "orders")
-public class Orders {
+public class Order {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    // Liên kết nhiều đơn hàng có thể thuộc 1 khách hàng
     @ManyToOne
     @JoinColumn(name = "customer_id", nullable = false)
     private Customer customer;
@@ -26,17 +25,45 @@ public class Orders {
     @Column(name = "order_date")
     private LocalDateTime orderDate;
 
-    // ====== Constructors ======
-    public Orders() {}
+    @Column(name = "shipping_fee")
+    private  BigDecimal shippingFee;
 
-    public Orders(Customer customer, BigDecimal vat, BigDecimal totalAmount, LocalDateTime orderDate) {
+    @Column(name = "status")
+    private String status;
+
+    @Column(name = "shipping_address")
+    private String shippingAddress;
+
+    public Order() {}
+
+    public Order(Customer customer, BigDecimal vat, BigDecimal totalAmount, LocalDateTime orderDate,BigDecimal shippingFee, String status, String shippingAddress) {
         this.customer = customer;
         this.vat = vat;
         this.totalAmount = totalAmount;
         this.orderDate = orderDate;
+        this.shippingFee = shippingFee;
+        this.status = status;
+        this.shippingAddress = shippingAddress;
     }
 
-    // ====== Getter & Setter ======
+    public BigDecimal getShippingFee(){
+        return shippingFee;
+    }
+    public void setShippingFee(BigDecimal shippingFee){
+        this.shippingFee = shippingFee;
+    }
+    public String getStatus(){
+        return status;
+    }
+    public void setStatus(String status){
+        this.status = status;
+    }
+    public String getShippingAddress(){
+        return shippingAddress;
+    }
+    public void setShippingAddress(String shippingAddress){
+        this.shippingAddress = shippingAddress;
+    }
     public Long getId() {
         return id;
     }

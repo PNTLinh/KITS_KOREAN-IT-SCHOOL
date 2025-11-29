@@ -1,0 +1,60 @@
+.container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    position: center;
+}
+.row1{
+    width: 100%;
+    height: 150px;
+    display: flex;
+}
+.figure1 {
+    width: 146px;
+    height: 126px;
+    background-color: #c4c4c4;
+    position: relative;
+}
+.box {
+    width: 55px;
+    height: 55px;
+    position: absolute; /* must have */
+}
+.box1 {
+    background-color: #eb5757; 
+    top: 0;
+    left: 0;
+}
+.box2 {
+    background-color: #f2994a; 
+    bottom: 0;
+    right: 0;
+}
+
+.figure2 {
+    position: relative;
+    width: 134px;
+    height: 90px;
+}
+
+.boxr {
+    width: 55px;
+    height: 55px;
+    position: absolute; /* must have */
+    transform: rotate(45deg); /* xoay thành hình thoi */
+}
+.r1, .r2 {
+    display: inline;
+}
+.box3 {
+    background-color: #f2994a; 
+}
+.box4 {
+    background-color: #9b51e0; 
+}
+.box5 {
+    background-color: #eb5757; 
+}
+.box6 {
+    background-color: #2f80ed; 
+}
